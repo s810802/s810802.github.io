@@ -1,0 +1,140 @@
+:root {
+    --primary-color: #B22222; /* 深紅色 */
+    --secondary-color: #FFD700; /* 金黃色 */
+    --text-color: #FFFFFF; /* 純白色 */
+    --output-bg: rgba(255, 250, 205, 0.8); /* 淺黃色帶透明度 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Kaiti SC', 'PingFang SC', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Kaiti SC', serif;
+    font-size: 20vw;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'PingFang SC', sans-serif;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-family: 'PingFang SC', sans-serif;
+    font-size: 2.5vw;
+}
+
+.generator {
+    margin: 40px 0;
+}
+
+#generateBtn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 2vw;
+    font-family: 'PingFang SC', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+}
+
+#generateBtn:hover {
+    background: linear-gradient(to right, #FFA500, #FFD700);
+}
+
+#generateBtn:active {
+    transform: scale(0.95);
+}
+
+.output {
+    background-color: var(--output-bg);
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#outputText {
+    font-family: 'PingFang SC', sans-serif;
+    font-size: 2vw;
+    color: #000;
+    text-align: center;
+    word-wrap: break-word;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    margin-top: 40px;
+    font-family: 'Kaiti SC', serif;
+    font-size: 1.5vw;
+}
+
+/* 複製成功提示 */
+.copy-success {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1.2vw;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 15vw; }
+    h2 { font-size: 5vw; }
+    header p { font-size: 4vw; }
+    #generateBtn { font-size: 4vw; }
+    #outputText { font-size: 4vw; }
+    footer { font-size: 3vw; }
+}
